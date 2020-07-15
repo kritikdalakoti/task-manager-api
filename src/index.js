@@ -1,13 +1,6 @@
-const express=require('express')
-require('./db/mongoose.js')//mongoose connects with database
-const userrouter=require('./router/user')
-const taskrouter=require('./router/task')
-const app=express()
-const port=process.env.PORT
+const app=require('./app')
 
-app.use(express.json())//would automatically parse incoming data.
-app.use(userrouter)
-app.use(taskrouter)
+const port=process.env.PORT
 
 app.listen(port,()=>{
     console.log('server is up at '+ port)
